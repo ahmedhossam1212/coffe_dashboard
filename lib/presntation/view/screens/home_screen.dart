@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.brown,
         title: Text(
-          "Dashboard",
+          "pop",
           style: getBoldStyle(color: AppColors.white, fontSize: 20),
         ),
       ),
