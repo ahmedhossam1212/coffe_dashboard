@@ -1,16 +1,24 @@
+import 'package:coffee_dashboard/presntation/view/screens/home_screen.dart';
 import 'package:coffee_dashboard/presntation/view/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
   static String splash = '/splash';
+  static String home = '/home';
 
   static final router = GoRouter(initialLocation: splash, routes: [
     GoRoute(
       path: splash,
       builder: (context, state) => const SplashScreen(),
+    ),
+    GoRoute(
+      path: home,
+      builder: (context, state) => const HomeScreen(),
     )
   ]);
+
+  // methods
 
   static void goPush(BuildContext context, String path) {
     GoRouter.of(context).push(path);

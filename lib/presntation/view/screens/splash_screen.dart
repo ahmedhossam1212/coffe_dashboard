@@ -1,3 +1,4 @@
+import 'package:coffee_dashboard/config/routes/app_routes.dart';
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
@@ -12,6 +13,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 4), () {
+      AppRouter.goAndFinish(context, AppRouter.home);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
