@@ -1,3 +1,1 @@
-class AppString {
-  static String appName = "";
-}
+class AppString {}
