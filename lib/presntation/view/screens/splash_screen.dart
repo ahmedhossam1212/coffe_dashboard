@@ -1,4 +1,5 @@
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
+import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
@@ -16,10 +17,15 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //RiveAnimation.asset("assets/animation/coffee.riv"),
+            SizedBox(
+                height: context.height * 0.2,
+                width: context.width * 0.3,
+                child:
+                    const RiveAnimation.asset("assets/animation/coffee.riv")),
             Text(
-              "Coffee Shope",
+              "Coffee Shop",
               style: getBoldStyle(color: AppColors.black, fontSize: 20),
             ),
           ],
