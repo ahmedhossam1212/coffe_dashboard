@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child:
                     const RiveAnimation.asset("assets/animation/coffee.riv")),
             Text(
-              "pop",
+              "Qahwa",
               style: getBoldStyle(color: AppColors.black, fontSize: 20),
             ),
           ],
