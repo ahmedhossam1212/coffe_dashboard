@@ -17,6 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 4), () {
+      // ignore: use_build_context_synchronously
       AppRouter.goAndFinish(context, AppRouter.home);
     });
   }
