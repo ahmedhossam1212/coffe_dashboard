@@ -107,6 +107,75 @@ Widget buildDrawer(BuildContext context) => Material(
               SizedBox(
                 height: context.height * 0.02,
               ),
+              TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.auto_awesome_motion_outlined,
+                        color: AppColors.black,
+                        size: context.height * 0.03,
+                      ),
+                      SizedBox(
+                        width: context.width * 0.004,
+                      ),
+                      Text(
+                        S.of(context).pages,
+                        style: getSemiBoldStyle(
+                            color: AppColors.black,
+                            fontSize: context.height * 0.03),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: context.height * 0.02,
+              ),
+              TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.yard_outlined,
+                        color: AppColors.black,
+                        size: context.height * 0.03,
+                      ),
+                      SizedBox(
+                        width: context.width * 0.004,
+                      ),
+                      Text(
+                        S.of(context).ads,
+                        style: getSemiBoldStyle(
+                            color: AppColors.black,
+                            fontSize: context.height * 0.03),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: context.height * 0.02,
+              ),
+              TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.settings_outlined,
+                        color: AppColors.black,
+                        size: context.height * 0.03,
+                      ),
+                      SizedBox(
+                        width: context.width * 0.004,
+                      ),
+                      Text(
+                        S.of(context).setting,
+                        style: getSemiBoldStyle(
+                            color: AppColors.black,
+                            fontSize: context.height * 0.03),
+                      ),
+                    ],
+                  )),
+              SizedBox(
+                height: context.height * 0.02,
+              ),
             ],
           ),
         ),

@@ -109,6 +109,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Ads`
+  String get ads {
+    return Intl.message(
+      'Ads',
+      name: 'ads',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pages`
+  String get pages {
+    return Intl.message(
+      'Pages',
+      name: 'pages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting`
+  String get setting {
+    return Intl.message(
+      'Setting',
+      name: 'setting',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
