@@ -4,5 +4,8 @@
     "products":"Products",
     "orders":"Orders",
     "categories":"Categories",
-    "statistics":"Statistics"
+    "statistics":"Statistics",
+    "ads":"Ads",
+    "pages":"Pages",
+    "setting":"Setting"
 }
