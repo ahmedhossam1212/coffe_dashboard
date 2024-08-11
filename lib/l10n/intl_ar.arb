@@ -1,3 +1,8 @@
 {
-    "qahwa":"قهوة"
+    "qahwa":"قهوة",
+    "dashboard":"لوحة التحكم",
+    "products":"المنتجات",
+    "orders":"الطلبات",
+    "categories":"الأقسام",
+    "statistics":"الإحصائيات"
 }
