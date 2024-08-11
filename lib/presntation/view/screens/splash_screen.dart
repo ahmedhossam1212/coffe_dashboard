@@ -2,6 +2,7 @@ import 'package:coffee_dashboard/config/routes/app_routes.dart';
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
+import 'package:coffee_dashboard/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child:
                     const RiveAnimation.asset("assets/animation/coffee.riv")),
             Text(
-              "pop",
+              S.of(context).qahwa,
               style: getBoldStyle(color: AppColors.black, fontSize: 20),
             ),
           ],
