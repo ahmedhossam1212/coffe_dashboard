@@ -1,6 +1,7 @@
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
+import 'package:coffee_dashboard/generated/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ Widget buildDrawer(BuildContext context) => Material(
                         width: context.width * 0.004,
                       ),
                       Text(
-                        "Statistics",
+                        S.of(context).statistics,
                         style: getSemiBoldStyle(
                             color: AppColors.black,
                             fontSize: context.height * 0.03),
@@ -50,7 +51,7 @@ Widget buildDrawer(BuildContext context) => Material(
                         width: context.width * 0.004,
                       ),
                       Text(
-                        "Categories",
+                        S.of(context).categories,
                         style: getSemiBoldStyle(
                             color: AppColors.black,
                             fontSize: context.height * 0.03),
@@ -73,7 +74,7 @@ Widget buildDrawer(BuildContext context) => Material(
                         width: context.width * 0.004,
                       ),
                       Text(
-                        "Products",
+                        S.of(context).products,
                         style: getSemiBoldStyle(
                             color: AppColors.black,
                             fontSize: context.height * 0.03),
@@ -96,7 +97,7 @@ Widget buildDrawer(BuildContext context) => Material(
                         width: context.width * 0.004,
                       ),
                       Text(
-                        "Orders",
+                        S.of(context).orders,
                         style: getSemiBoldStyle(
                             color: AppColors.black,
                             fontSize: context.height * 0.03),
