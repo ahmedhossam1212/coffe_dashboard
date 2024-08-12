@@ -1,3 +1,4 @@
+import 'package:coffee_dashboard/config/routes/app_routes.dart';
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
@@ -26,6 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
             fontSize: context.height * 0.045,
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                AppRouter.goPush(context, AppRouter.notifcation);
+              },
+              icon: Icon(
+                Icons.notifications_none,
+                color: AppColors.black,
+              ))
+        ],
       ),
       body: Row(
         children: [

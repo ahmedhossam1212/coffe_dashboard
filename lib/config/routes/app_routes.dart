@@ -1,4 +1,5 @@
 import 'package:coffee_dashboard/presntation/view/screens/home_screen.dart';
+import 'package:coffee_dashboard/presntation/view/screens/notifcation_screen.dart';
 import 'package:coffee_dashboard/presntation/view/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -6,6 +7,7 @@ import 'package:go_router/go_router.dart';
 class AppRouter {
   static String splash = '/splash';
   static String home = '/home';
+  static String notifcation = '/notifcation';
 
   static final router = GoRouter(initialLocation: splash, routes: [
     GoRoute(
@@ -15,6 +17,10 @@ class AppRouter {
     GoRoute(
       path: home,
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: notifcation,
+      builder: (context, state) => const NotifcationScreen(),
     )
   ]);
 
