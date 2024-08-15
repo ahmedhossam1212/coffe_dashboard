@@ -4,7 +4,7 @@ import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
 import 'package:coffee_dashboard/generated/l10n.dart';
 import 'package:coffee_dashboard/presntation/view/screens/ads_screen.dart';
-import 'package:coffee_dashboard/presntation/view/screens/categoies_screen.dart';
+import 'package:coffee_dashboard/presntation/view/screens/categories/categoies_screen.dart';
 import 'package:coffee_dashboard/presntation/view/screens/orders_screen.dart';
 import 'package:coffee_dashboard/presntation/view/screens/pages_screen.dart';
 import 'package:coffee_dashboard/presntation/view/screens/products_screen.dart';

@@ -1,3 +1,4 @@
+import 'package:coffee_dashboard/config/routes/app_routes.dart';
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
@@ -29,7 +30,11 @@ Widget buildCategory(BuildContext context) => SizedBox(
                     style: getMediumStyle(color: AppColors.black, fontSize: 17),
                   ),
                   const Spacer(),
-                  TextButton(onPressed: () {}, child: Text("More details"))
+                  TextButton(
+                      onPressed: () {
+                        AppRouter.goPush(context, AppRouter.categories);
+                      },
+                      child: Text("More details"))
                 ],
               ),
             ),
