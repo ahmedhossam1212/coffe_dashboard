@@ -14,8 +14,11 @@ Widget buildCategory(BuildContext context, Category model) => SizedBox(
         borderRadius: BorderRadius.circular(20),
         child: Column(
           children: [
-            Image.network(
-                width: double.infinity, fit: BoxFit.cover, model.image),
+            SizedBox(
+              height: context.height * 0.3,
+              child: Image.network(
+                  width: double.infinity, fit: BoxFit.cover, model.image),
+            ),
             SizedBox(
               height: context.height * 0.025,
             ),

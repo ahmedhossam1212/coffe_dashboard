@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
@@ -8,6 +9,7 @@ import 'package:coffee_dashboard/presntation/view/widgets/input_form.dart';
 import 'package:coffee_dashboard/presntation/view/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CategoiesScreen extends StatefulWidget {
   const CategoiesScreen({super.key});
@@ -18,6 +20,19 @@ class CategoiesScreen extends StatefulWidget {
 
 class _CategoiesScreenState extends State<CategoiesScreen> {
   final TextEditingController nameController = TextEditingController();
+
+  File? image;
+
+  final _picker = ImagePicker();
+  Future<void> openImagePicker() async {
+    final XFile? pickedImage =
+        await _picker.pickImage(source: ImageSource.gallery);
+    if (pickedImage != null) {
+      setState(() {
+        image = File(pickedImage.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +60,10 @@ class _CategoiesScreenState extends State<CategoiesScreen> {
                         SizedBox(
                           width: context.width * 0.04,
                         ),
-                        mainButton(context,
-                            width: context.width * 0.13,
-                            onpressd: () {},
-                            background: AppColors.black,
-                            text: "Submit")
+                        mainButton(context, width: context.width * 0.13,
+                            onpressd: () {
+                          cubit.addCategory(nameController.text, image!);
+                        }, background: AppColors.black, text: "Submit")
                       ],
                     ),
                     SizedBox(
@@ -57,21 +71,35 @@ class _CategoiesScreenState extends State<CategoiesScreen> {
                     ),
                     SizedBox(
                       width: context.width * 0.09,
-                      child: TextButton(
-                          onPressed: () {},
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.add,
-                                color: AppColors.black,
+                      child: image != null
+                          ? Container(
+                              clipBehavior: Clip.antiAlias,
+                              width: 120,
+                              height: 120,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
                               ),
-                              Text(
-                                "Select Image",
-                                style: getBoldStyle(
-                                    color: AppColors.black, fontSize: 15),
-                              )
-                            ],
-                          )),
+                              child: Image.file(
+                                image!,
+                                fit: BoxFit.cover,
+                              ))
+                          : TextButton(
+                              onPressed: () {
+                                openImagePicker();
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.add,
+                                    color: AppColors.black,
+                                  ),
+                                  Text(
+                                    "Select Image",
+                                    style: getBoldStyle(
+                                        color: AppColors.black, fontSize: 15),
+                                  )
+                                ],
+                              )),
                     ),
                     SizedBox(
                       height: context.height * 0.03,
