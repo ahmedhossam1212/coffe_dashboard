@@ -1,10 +1,11 @@
-import 'package:coffee_dashboard/config/routes/app_routes.dart';
 import 'package:coffee_dashboard/core/utils/app_colors.dart';
 import 'package:coffee_dashboard/core/utils/media_query_values.dart';
 import 'package:coffee_dashboard/core/utils/style_manager.dart';
+import 'package:coffee_dashboard/models/categories_model.dart';
+import 'package:coffee_dashboard/presntation/view/screens/categories/category_details.dart';
 import 'package:flutter/material.dart';
 
-Widget buildCategory(BuildContext context) => SizedBox(
+Widget buildCategory(BuildContext context, Category model) => SizedBox(
       height: 300,
       child: Material(
         clipBehavior: Clip.hardEdge,
@@ -14,9 +15,7 @@ Widget buildCategory(BuildContext context) => SizedBox(
         child: Column(
           children: [
             Image.network(
-                width: double.infinity,
-                fit: BoxFit.cover,
-                "https://cdn.dribbble.com/userupload/11886093/file/original-97d3661868ee446bd36ca59534095920.jpg?resize=752x"),
+                width: double.infinity, fit: BoxFit.cover, model.image),
             SizedBox(
               height: context.height * 0.025,
             ),
@@ -26,15 +25,21 @@ Widget buildCategory(BuildContext context) => SizedBox(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Coffee",
+                    model.name,
                     style: getMediumStyle(color: AppColors.black, fontSize: 17),
                   ),
                   const Spacer(),
                   TextButton(
                       onPressed: () {
-                        AppRouter.goPush(context, AppRouter.categories);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CategoryDetails(
+                                categoryId: model.id,
+                              ),
+                            ));
                       },
-                      child: Text("More details"))
+                      child: const Text("More details"))
                 ],
               ),
             ),
