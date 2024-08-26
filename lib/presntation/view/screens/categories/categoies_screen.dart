@@ -23,6 +23,8 @@ class _CategoiesScreenState extends State<CategoiesScreen> {
 
   File? image;
 
+  //check git hu
+
   final _picker = ImagePicker();
   Future<void> openImagePicker() async {
     final XFile? pickedImage =
